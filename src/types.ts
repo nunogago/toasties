@@ -36,13 +36,11 @@ export interface Options {
   offset?: Offset
   limit?: number
   theme?: `${Theme}`
-  stacked?: boolean
   draggable?: boolean
   position?: `${Position}`
   animation?: `${Animation}`
   pauseOnHover?: boolean
   closeOnClick?: boolean
-  hideProgressBar?: boolean
   pauseOnFocusLoss?: boolean
 }
 

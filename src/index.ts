@@ -1,4 +1,6 @@
-import { Options, ElementOptions } from './types'
+import { Options } from './types'
+
+import { DEFAULT_OPTIONS, DEFAULT_ELEMENT_OPTIONS } from './utils'
 
 class Controller {
   options: Options
@@ -7,7 +9,7 @@ class Controller {
     this.options = options
   }
 
-  show(options: ElementOptions): string {
+  show(options = DEFAULT_ELEMENT_OPTIONS): string {
     return ''
   }
 
@@ -17,7 +19,7 @@ class Controller {
 }
 
 // factory?
-export default (options: Options) => {
+export default (options = DEFAULT_OPTIONS) => {
   const intance = new Controller(options)
   return intance
 }
