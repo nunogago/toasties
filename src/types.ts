@@ -1,31 +1,4 @@
-export enum Position {
-  TopLeft = 'top-left',
-  TopRight = 'top-right',
-  TopCenter = 'top-center',
-  BottomLeft = 'bottom-left',
-  BottomRight = 'bottom-right',
-  BottomCenter = 'bottom-center'
-}
-
-export enum Type {
-  Default = 'default',
-  Success = 'success',
-  Warning = 'warning',
-  Error = 'error',
-  Info = 'info'
-}
-
-export enum Theme {
-  Colored = 'colored',
-  Light = 'light',
-  Dark = 'dark'
-}
-
-export enum Animation {
-  Fade = 'fade',
-  Zoom = 'zoom',
-  Flip = 'flip'
-}
+import { Theme, Position, Animation, Type } from './constants'
 
 export type Offset = {
   x: number
