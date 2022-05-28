@@ -1,31 +1,34 @@
 import Render from './render'
 import Element from './element'
 
-class Stack extends Render {
-  private queue: Map<string, any>
-  private limit: number
+import { DEFAULT_QUEUE_LIMIT } from '../constants'
 
-  constructor(limit: number = 5) {
+class Stack extends Render {
+  private queue: Map<string, Element>
+  private readonly limit: number
+
+  constructor(limit: number = DEFAULT_QUEUE_LIMIT) {
     super()
-    this.limit = limit
+
     this.queue = new Map()
+    this.limit = limit
   }
 
-  getLastElementId() {
+  private getLastElementId() {
     return [...this.queue][this.queue.size - 1][0]
   }
 
-  add(id: string, el: Element) {
+  addToStack(id: string, el: Element) {
     if (this.queue.size >= this.limit) {
       const lastElementId = this.getLastElementId()
-      this.remove(lastElementId)
+      this.removeFromStack(lastElementId)
     }
 
     this.queue.set(id, el)
     this.addToDom(el)
   }
 
-  remove(id: string) {
+  removeFromStack(id: string) {
     this.queue.delete(id)
     this.removeFromDom(id)
   }

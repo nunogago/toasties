@@ -1,9 +1,9 @@
 import Element from './element'
 
-class Render {
+abstract class Render {
   private _rootElement: HTMLElement
 
-  constructor() {
+  protected constructor() {
     this._rootElement = document?.body
   }
 
@@ -14,10 +14,7 @@ class Render {
 
   protected removeFromDom(id: string) {
     const node = this._rootElement.querySelector(`[id='${id}']`)
-
-    if (node) {
-      this._rootElement.removeChild(node)
-    }
+    node && this._rootElement.removeChild(node)
   }
 }
 

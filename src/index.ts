@@ -1,5 +1,5 @@
-import Element from './element'
-import Stack from './stack'
+import Element from './controllers/element'
+import Stack from './controllers/stack'
 
 import { DEFAULT_OPTIONS, DEFAULT_ELEMENT_OPTIONS } from './constants'
 import { generateRandomId } from './utils'
@@ -21,12 +21,12 @@ class Controller {
       ...this.options
     })
 
-    this.stack.add(id, el)
+    this.stack.addToStack(id, el)
     return id
   }
 
   hide(id: string) {
-    this.stack.remove(id)
+    this.stack.removeFromStack(id)
   }
 }
 

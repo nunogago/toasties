@@ -1,6 +1,18 @@
-import { Theme, Position, Animation, Type } from './constants'
+type Theme = 'colored' | 'light' | 'dark'
 
-export type Offset = {
+type Position =
+  | 'top-left'
+  | 'top-right'
+  | 'top-center'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'bottom-center'
+
+type Animation = 'fade' | 'zoom' | 'flip'
+
+type Type = 'default' | 'success' | 'warning' | 'error' | 'info'
+
+type Offset = {
   x: number
   y: number
 }
