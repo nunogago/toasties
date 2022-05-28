@@ -13,7 +13,7 @@ class Render {
   }
 
   protected removeFromDom(id: string) {
-    const node = this._rootElement.querySelector(`#${id}`)
+    const node = this._rootElement.querySelector(`[id='${id}']`)
 
     if (node) {
       this._rootElement.removeChild(node)
